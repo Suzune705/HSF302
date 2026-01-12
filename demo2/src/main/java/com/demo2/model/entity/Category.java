@@ -7,12 +7,17 @@ import java.util.Collection;
 import java.util.Set;
 
 @Entity
-@Table(name = "category", schema = "suzune")
+@Table(name = "category")
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "category_id")
-    private int categoryID ;
+    @Column(name = "id")
+    private int id ;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "title", length = 20 )
+    private BookType title ;
+
    // categories : the field name in java
     @ManyToMany(mappedBy = "categories")
     private Set<Book> books ;

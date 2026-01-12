@@ -12,7 +12,7 @@ import lombok.*;
 @Setter
 @Builder
 public class UserResponse {
-    private int userID;
+    private int id;
     private String name;
     private String account;
 }

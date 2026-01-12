@@ -12,7 +12,7 @@ public class UserMapper {
 
     public static UserResponse toUserResponse(User user){
         return UserResponse.builder()
-                .userID(user.getUserID())
+                .id(user.getUserID())
                 .name(user.getName())
                 .account(user.getAccount())
                 .build();

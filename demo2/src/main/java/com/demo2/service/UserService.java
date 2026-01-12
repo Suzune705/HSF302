@@ -18,7 +18,7 @@ public class UserService {
     private final UserRepository userRepository ;
 
     public List<UserResponse> getAllUser(){
-        return userRepository.showUsers()
+        return userRepository.findAll()
                 .stream()
                 .map(user -> UserMapper.toUserResponse(user))
                 .toList();
