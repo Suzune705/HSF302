@@ -9,9 +9,9 @@ import java.util.Objects;
 @Embeddable
 public class StudentCourseId implements Serializable {
     @Column(name = "course_id", nullable = false)
-    private Integer courseId ;
+    private Long courseId ;
     @Column(name = "student_id", nullable = false)
-    private Integer studentId;
+    private Long studentId;
 
     @Override
     public boolean equals(Object o) {

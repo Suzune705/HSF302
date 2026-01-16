@@ -10,7 +10,7 @@ public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "dept_id")
-    private Integer id ;
+    private Long id ;
     @Column(name = "dept_name", length = 100 , nullable = false)
     private String deptName;
     @OneToMany(mappedBy = "department")

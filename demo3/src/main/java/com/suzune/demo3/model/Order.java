@@ -4,6 +4,7 @@ package com.suzune.demo3.model;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -12,10 +13,10 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_id")
-    private Integer id ;
+    private Long id ;
 
     @Column(name = "order_date", nullable = true)
-    private LocalDate orderDate ;
+    private LocalDateTime orderDate ;
 
     @Column(name = "customer_name", length = 150 , nullable = false)
     private String customerName ;

@@ -11,10 +11,10 @@ public class Profile {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "profile_id")
-    private Integer id ;
+    private Long id ;
     @Column(name = "full_name", length = 150, nullable = true)
     private String fullname ;
-    @Column(name = "birthdate", nullable = true)
+    @Column(name = "birthday", nullable = true)
     private LocalDate birthDate;
     @OneToOne
     @JoinColumn(name = "user_id", nullable = true)

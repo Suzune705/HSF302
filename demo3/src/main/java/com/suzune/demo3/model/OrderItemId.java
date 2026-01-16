@@ -10,13 +10,12 @@ import java.util.Objects;
 @Embeddable
 public class OrderItemId implements Serializable {
 
-
     @Column(name = "order_id", nullable = false)
-    private Integer orderId ;
+    private Long orderId ;
 
 
     @Column(name = "product_id", nullable = false)
-    private Integer productId ;
+    private Long productId ;
 
     @Override
     public boolean equals(Object o) {

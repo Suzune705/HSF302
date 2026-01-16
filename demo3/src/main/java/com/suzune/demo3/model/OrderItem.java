@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "Order_items")
+@Table(name = "Order_Items")
 public class OrderItem {
     @EmbeddedId
     private OrderItemId id ;
