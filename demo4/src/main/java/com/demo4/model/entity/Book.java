@@ -2,11 +2,16 @@ package com.demo4.model.entity;
 
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.List;
 
 @Table(name = "books")
 @Entity
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
