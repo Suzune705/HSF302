@@ -1,7 +1,6 @@
 package com.demo4.model.dto.response;
 
 import com.demo4.model.entity.Author;
-import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -14,5 +13,5 @@ import java.time.LocalDate;
 public class AuthorDetailResponse {
     private String biography ;
     private LocalDate birthDate ;
-    private Author author ;
+    private AuthorResponse author ;
 }

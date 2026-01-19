@@ -15,7 +15,7 @@
         <tr th:each="author : ${list}">
             <td th:text="${author.penName}"></td>
             <td th:text="${author.nationality}"></td>
-            <td th:text="${author.authorDetail.biography}"></td>
+            <td th:text="${author.authorDetailResponse.biography}"></td>
         </tr>
     </table>
 </body>
