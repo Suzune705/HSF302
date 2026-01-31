@@ -3,8 +3,17 @@
     - @JoinTable : for N - N relationship 
     - @mappedBy : for main entity that has not `FK`
     - @Join is used for entity that has `FK`
-    - @Column : to map 1 filed - 1 column 
----
+    - @Column : to map 1 filed - 1 column  
+    - @OneToOne(mappedBy = "user")  : user is the name of field in OWNER SIDE
+    - @EmmbedId :
+    - @MappId : use the name of feild in 
+    
+---- 
+### Composite Key 
+    - 
+
+
+--- 
 ## SQL Server Configuration
     - ### DDl-auto 
         - create : remove old table and create new table

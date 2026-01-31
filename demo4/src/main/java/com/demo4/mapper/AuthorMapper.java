@@ -11,12 +11,13 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Component // allow spring manage object rather than I have to manage it by manually creating object
 public class AuthorMapper {
 
-    public List<AuthorResponse> toAuthorResponse(List<Author> authorList){
+    public List<AuthorResponse> toAuthorResponseList(List<Author> authorList){
         return authorList.stream()
                 .map(author -> AuthorResponse.builder()
                         .penName(author.getPenName())
@@ -28,5 +29,12 @@ public class AuthorMapper {
                         )
                         .build()
                 ).toList(); // can not be mutable
+    }
+    public AuthorResponse toAuthorResponse(Author author){
+        AuthorResponse authorResponse = AuthorResponse.builder()
+                .penName(author.getPenName())
+                .nationality(author.getNationality())
+                .build();
+        return authorResponse ;
     }
 }

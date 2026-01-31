@@ -3,7 +3,10 @@ package com.demo4.model.entity;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "tags")
@@ -20,5 +23,16 @@ public class Tag {
             joinColumns = @JoinColumn(name = "tag_id"),
             inverseJoinColumns = @JoinColumn(name = "book_id")
     )
-    private List<Book> bookList ;
+    private Set<Book> bookSet = new HashSet<>();
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Tag tag)) return false;
+        return Objects.equals(id, tag.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
+    }
 }

@@ -18,5 +18,15 @@
             <td th:text="${author.authorDetailResponse.biography}"></td>
         </tr>
     </table>
+    <br>
+    <form method="get" action="/author">
+        <label> ID </label>
+        <input type="text" name="id">
+        <button type="submit">Search</button>
+    </form>
+    <div th:if="${author != null}">
+        <input type="text" th:value="${author.penName}">
+    </div>
+
 </body>
 </html>

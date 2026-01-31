@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -14,10 +16,17 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AuthorController {
     private final AuthorService authorService ;
-    @GetMapping("/author")
+    @GetMapping("/author/showAuthor")
     public String showAuthor(Model model ){
         List<AuthorResponse> list = authorService.getAllAuthor();
         model.addAttribute("list", list);
+        return "author";
+    }
+
+    @GetMapping("/author/findAuthor")
+    public String  findAuthor(@RequestParam long id,  Model model){
+        AuthorResponse authorResponse = authorService.getAuthorByid(id);
+        model.addAttribute("author", authorResponse);
         return "author";
     }
 }

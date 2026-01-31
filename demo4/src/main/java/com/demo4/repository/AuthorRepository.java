@@ -10,4 +10,6 @@ import java.util.Optional;
 @Repository
 public interface AuthorRepository extends JpaRepository<Author, Long> {
     List<Author> findAll();
+
+    Author getAuthorById(Long id);
 }
